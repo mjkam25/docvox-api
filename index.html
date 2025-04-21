@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocVox - Synthèse Vocale Intelligente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎙️ VocaFile</h1>
+            <p>Transformez n'importe quel document en résumé audio en 1 clic</p>
+        </header>
+
+        <main>
+            <div class="upload-box" id="dropZone">
+                <input type="file" id="fileInput" accept=".pdf,.docx,.txt">
+                <label for="fileInput" class="upload-label">
+                    <div class="upload-icon">📁</div>
+                    <span id="fileStatus">Glissez votre fichier ici ou cliquez pour choisir</span>
+                </label>
+            </div>
+
+            <div class="controls">
+                <div class="slider-container">
+                    <label>Longueur du résumé : <span id="phraseCount">5</span> phrases</label>
+                    <input type="range" id="phraseSlider" min="1" max="15" value="5">
+                </div>
+                <button id="generateBtn" class="generate-button">
+                    <span class="btn-text">Générer le résumé</span>
+                    <div class="spinner"></div>
+                </button>
+            </div>
+
+            <div class="result-container hidden" id="resultContainer">
+                <div class="result-tabs">
+                    <button class="tab active" data-tab="summary">Résumé</button>
+                    <button class="tab" data-tab="audio">Audio</button>
+                </div>
+
+                <div class="tab-content active" id="summaryContent">
+                    <div class="summary-box" id="summaryBox"></div>
+                    <a id="downloadSummary" class="download-btn">📥 Télécharger le résumé</a>
+                </div>
+
+                <div class="tab-content" id="audioContent">
+                    <audio id="audioPlayer" controls></audio>
+                    <a id="downloadAudio" class="download-btn">🎧 Télécharger l'audio</a>
+                </div>
+            </div>
+
+            <div class="loader hidden" id="loader">
+                <div class="loader-spinner"></div>
+                <p>Analyse en cours avec l'IA...</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

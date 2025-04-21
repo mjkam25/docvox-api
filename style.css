@@ -1,0 +1,99 @@
+:root {
+    --primary: #4a6de5;
+    --secondary: #6c5ce7;
+    --text: #2d3436;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8f9fa;
+    color: var(--text);
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.upload-box {
+    border: 3px dashed var(--primary);
+    border-radius: 15px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin: 2rem 0;
+    transition: all 0.3s;
+}
+
+.upload-box:hover {
+    background: rgba(74, 109, 229, 0.05);
+}
+
+.upload-label {
+    cursor: pointer;
+}
+
+.generate-button {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.generate-button:hover {
+    transform: translateY(-2px);
+}
+
+.loader-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.result-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: var(--primary);
+    color: white;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--secondary);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
